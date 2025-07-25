@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Martin Mutugi | Digital Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    section { scroll-margin-top: 80px; }
+  </style>
+</head>
+<body class="dark-mode">
+
+  <button id="theme-toggle">🌙 Toggle Theme</button>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Martin<span>Mutugi</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero" data-aos="zoom-in">
+      <h1>Creating Code with Purpose</h1>
+      <p>Backend brilliance. Frontend finesse. World-class developer.</p>
+      <a href="#contact" class="btn">Let’s Talk</a>
+    </div>
+  </header>
+
+  <section id="about" class="section" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I’m Martin Mutugi, a software developer and digital advocate based in Nairobi. I craft intuitive web experiences, scale backend systems, and empower others with tech skills. My transformation from trainee to mentor fuels my global mission.</p>
+    <img src="assets/profile.jpg" alt="Martin Mutugi" class="profile-img" />
+  </section>
+
+  <section id="education" class="section" data-aos="fade-up">
+    <h2>Education & Certifications</h2>
+    <ul>
+      <li>BSc in Computer Science – Kibabii University (2024)</li>
+      <li>AWS Certified Developer</li>
+      <li>Python for Data Science and Machine Learning</li>
+      <li>Full-Stack Web Development Certification</li>
+    </ul>
+    <a class="cv-button" href="assets/MartinMutugi_CV.pdf" target="_blank">📄 Download My CV</a>
+  </section>
+
+  <section id="interests" class="section" data-aos="fade-up">
+    <h2>Interests</h2>
+    <div class="grid">
+      <p><strong>Tech Empowerment:</strong> Advocating for youth digital literacy across Africa.</p>
+      <p><strong>Creative Coding:</strong> Transforming ideas into scalable, impactful apps.</p>
+      <p><strong>Digital Entrepreneurship:</strong> Growing resilient online platforms and communities.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div id="project-container" class="grid"></div>
+  </section>
+
+  <section id="contact" class="section contact" data-aos="fade-up">
+    <h2>Let’s Connect</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-icons">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Martin Mutugi — Built with 💡 for global excellence</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      const body = document.body;
+      if (body.classList.contains('dark-mode')) {
+        body.classList.replace('dark-mode', 'light-mode');
+      } else {
+        body.classList.replace('light-mode', 'dark-mode');
+      }
+    });
+
+    const projects = [
+      {
+        title: "Smart Survey Optimizer",
+        description: "AI-powered system that boosts survey approvals by 60%.",
+        link: "https://github.com/yourusername/survey-optimizer"
+      },
+      {
+        title: "Digital Empowerment Blog",
+        description: "Stories, guides, and resources for African youth in tech.",
+        link: "https://yourblog.netlify.app"
+      },
+      {
+        title: "Portfolio Builder",
+        description: "Responsive portfolio template built with HTML, CSS, and JS.",
+        link: "https://github.com/yourusername/portfolio-builder"
+      }
+    ];
+
+    const container = document.getElementById("project-container");
+    projects.forEach(project => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.link}" target="_blank">View Project</a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
