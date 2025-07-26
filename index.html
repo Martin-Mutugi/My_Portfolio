@@ -9,63 +9,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
-    body {
-      overflow-x: hidden;
-    }
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Keeps it on top of other elements */
+  background-color: white; /* Or match your header's background */
+}
 
-    section {
-      scroll-margin-top: 80px;
-    }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+html {
+  scroll-behavior: smooth;
+}
 
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: #1c1c1c;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #333;
-    }
-
-    .card-section {
-      background-color: #1c1c1c;
-      padding: 2rem;
-      margin: 2rem auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      border: 1px solid #333;
-      max-width: 900px;
-      transition: transform 0.3s ease;
-    }
-
-    .card-section:hover {
-      transform: translateY(-3px);
-      border-color: #04c5ad;
-    }
-
-    body.light-mode .card-section {
-      background-color: #f9f9f9;
-      border: 1px solid #ccc;
-      color: #222;
-    }
-
-    .card {
-      background-color: #292929;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    body.light-mode .card {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      color: #222;
-    }
   </style>
 </head>
 <body class="dark-mode">
@@ -73,23 +33,30 @@
   <button id="theme-toggle">🌙 Toggle Theme</button>
 
   <header>
-    <nav class="navbar">
-      <div class="logo">My <span>Journey</span></div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="hero card-section" data-aos="zoom-in">
-      <h1>Creating Code with Purpose</h1>
-      <p>Backend brilliance. Frontend finesse. World-class developer.</p>
-      <a href="#contact" class="btn">Let’s Talk</a>
-    </div>
-  </header>
+  <nav class="navbar">
+    <div class="logo">My <span>Journey</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+ 
+</header>
+<div class="hero" id="home" data-aos="fade-up">
+    <h1>Martin Mutugi</h1>
+    <p>Empowering Africa through code and creativity</p>
+    <a href="#about" class="btn">Learn More</a>
+  </div>
+ <div class="hero card-section" data-aos="zoom-in">
+    <h1>Creating Code with Purpose</h1>
+    <p>Backend brilliance. Frontend finesse. World-class developer.</p>
+    <a href="#contact" class="btn">Let’s Talk</a>
+  </div>
 
   <section id="about" class="card-section" data-aos="fade-up">
     <h2>About Me</h2>
