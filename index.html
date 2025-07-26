@@ -12,8 +12,8 @@
     header {
   position: sticky;
   top: 0;
-  z-index: 1000; /* Keeps it on top of other elements */
-  background-color: white; /* Or match your header's background */
+  z-index: 1000; 
+  background-color: white; 
 }
 
 .navbar {
@@ -47,16 +47,20 @@ html {
 
  
 </header>
-<div class="hero" id="home" data-aos="fade-up">
-    <h1>Martin Mutugi</h1>
-    <p>Empowering Africa through code and creativity</p>
-    <a href="#about" class="btn">Learn More</a>
+<!-- Hero/Home Section -->
+<section class="hero" id="home" data-aos="fade-up">
+  <img src="assets/profile.jpg" alt="Martin Mutugi" class="profile-img" />
+
+  <h1>Hello, I'm <span class="highlighted-name">Martin Mutugi</span></h1>
+
+  <p class="tagline">Empowering Africa through code and creativity</p>
+
+  <div class="hero-buttons">
+    <a href="#projects" class="btn">View My Projects</a>
+    <a href="#contact" class="btn-outline">Hire Me</a>
   </div>
- <div class="hero card-section" data-aos="zoom-in">
-    <h1>Creating Code with Purpose</h1>
-    <p>Backend brilliance. Frontend finesse. World-class developer.</p>
-    <a href="#contact" class="btn">Let’s Talk</a>
-  </div>
+</section>
+
 
   <section id="about" class="card-section" data-aos="fade-up">
     <h2>About Me</h2>
@@ -90,18 +94,26 @@ html {
   </section>
 
   <section id="contact" class="card-section contact" data-aos="fade-up">
-    <h2>Let’s Connect</h2>
-    <form action="https://formspree.io/f/yourformid" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="social-icons">
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-    </div>
-  </section>
+  <h2>Let’s Connect</h2>
+  <form action="https://formsubmit.co/mutugimartin967@gmail.com" method="POST">
+    <!-- Prevent bot spam -->
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Redirect after submit (optional) -->
+    <input type="hidden" name="_next" value="https://your-portfolio-site.com/thank-you.html">
+
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="social-icons">
+    <a href="https://github.com/Martin-Mutugi" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/martin-mutugi-a210b1373/" target="_blank">LinkedIn</a>
+  </div>
+</section>
+
 
   <footer class="card-section">
     <p>© 2025 Martin Mutugi — Built with 💡 for global excellence</p>
