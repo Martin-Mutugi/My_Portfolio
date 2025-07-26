@@ -9,7 +9,63 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
-    section { scroll-margin-top: 80px; }
+    body {
+      overflow-x: hidden;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #1c1c1c;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+
+    .card-section {
+      background-color: #1c1c1c;
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border: 1px solid #333;
+      max-width: 900px;
+      transition: transform 0.3s ease;
+    }
+
+    .card-section:hover {
+      transform: translateY(-3px);
+      border-color: #04c5ad;
+    }
+
+    body.light-mode .card-section {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      color: #222;
+    }
+
+    .card {
+      background-color: #292929;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    body.light-mode .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      color: #222;
+    }
   </style>
 </head>
 <body class="dark-mode">
@@ -18,7 +74,7 @@
 
   <header>
     <nav class="navbar">
-      <div class="logo">Martin<span>Mutugi</span></div>
+      <div class="logo">My <span>Journey</span></div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -28,20 +84,20 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hero" data-aos="zoom-in">
+    <div class="hero card-section" data-aos="zoom-in">
       <h1>Creating Code with Purpose</h1>
       <p>Backend brilliance. Frontend finesse. World-class developer.</p>
       <a href="#contact" class="btn">Let’s Talk</a>
     </div>
   </header>
 
-  <section id="about" class="section" data-aos="fade-up">
+  <section id="about" class="card-section" data-aos="fade-up">
     <h2>About Me</h2>
     <p>I’m Martin Mutugi, a software developer and digital advocate based in Nairobi. I craft intuitive web experiences, scale backend systems, and empower others with tech skills. My transformation from trainee to mentor fuels my global mission.</p>
-    <img src="assets/profile.jpg" alt="Martin Mutugi" class="profile-img" />
+    <img src="assets/profile.jpg" alt="martin mutugi" class="profile-img" width="50" height="50" />
   </section>
 
-  <section id="education" class="section" data-aos="fade-up">
+  <section id="education" class="card-section" data-aos="fade-up">
     <h2>Education & Certifications</h2>
     <ul>
       <li>BSc in Computer Science – Kibabii University (2024)</li>
@@ -52,7 +108,7 @@
     <a class="cv-button" href="assets/MartinMutugi_CV.pdf" target="_blank">📄 Download My CV</a>
   </section>
 
-  <section id="interests" class="section" data-aos="fade-up">
+  <section id="interests" class="card-section" data-aos="fade-up">
     <h2>Interests</h2>
     <div class="grid">
       <p><strong>Tech Empowerment:</strong> Advocating for youth digital literacy across Africa.</p>
@@ -61,12 +117,12 @@
     </div>
   </section>
 
-  <section id="projects" class="section" data-aos="fade-up">
+  <section id="projects" class="card-section" data-aos="fade-up">
     <h2>Projects</h2>
     <div id="project-container" class="grid"></div>
   </section>
 
-  <section id="contact" class="section contact" data-aos="fade-up">
+  <section id="contact" class="card-section contact" data-aos="fade-up">
     <h2>Let’s Connect</h2>
     <form action="https://formspree.io/f/yourformid" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
@@ -80,7 +136,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer class="card-section">
     <p>© 2025 Martin Mutugi — Built with 💡 for global excellence</p>
   </footer>
 
@@ -90,12 +146,8 @@
 
     const toggleBtn = document.getElementById('theme-toggle');
     toggleBtn.addEventListener('click', () => {
-      const body = document.body;
-      if (body.classList.contains('dark-mode')) {
-        body.classList.replace('dark-mode', 'light-mode');
-      } else {
-        body.classList.replace('light-mode', 'dark-mode');
-      }
+      document.body.classList.toggle('light-mode');
+      document.body.classList.toggle('dark-mode');
     });
 
     const projects = [
