@@ -663,3 +663,23 @@ body.light-mode .progress {
   width: 16px;
   height: 16px;
 }
+/* Nav Icons */
+.nav-icon {
+  width: 20px;
+  margin-right: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .nav-icon {
+    width: 18px;
+    margin-right: 6px;
+  }
+}
