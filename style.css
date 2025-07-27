@@ -542,3 +542,124 @@ body.light-mode footer {
   color: #222;
   border-top: 1.5px solid #04c5ad33;
 }
+/* ===== SKILL BARS ===== */
+.skill-level-title {
+  color: #04c5ad;
+  margin: 1.5rem 0 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px #04c5ad33;
+}
+
+.skill-bar {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.skill-name {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #f5f5f5;
+  font-size: 1.1rem;
+}
+
+.bar {
+  height: 10px;
+  background: rgba(28,28,28,0.8);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+  border: 1px solid #04c5ad22;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #04c5ad 0%, #02a390 100%);
+  border-radius: 5px;
+  transition: width 0.8s cubic-bezier(.4,0,.2,1), background 0.3s;
+  position: relative;
+}
+
+.progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255,255,255,0.2) 50%, 
+    transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Hover Effects */
+.skill-bar:hover .progress {
+  background: linear-gradient(90deg, #02a390 0%, #04c5ad 100%);
+  box-shadow: 0 0 8px #04c5ad55;
+}
+
+.skill-bar:hover .skill-name {
+  color: #04c5ad;
+}
+
+/* Light Mode Adjustments */
+body.light-mode .skill-name {
+  color: #333;
+}
+
+body.light-mode .bar {
+  background: rgba(240,240,240,0.9);
+}
+
+body.light-mode .progress {
+  background: linear-gradient(90deg, #04c5ad 0%, #02a390 100%);
+}
+/* Add to your existing CSS */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tag {
+  background: rgba(4, 197, 173, 0.15);
+  color: #04c5ad;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.metrics {
+  font-size: 0.9rem;
+  color: #ffd700;
+  margin: 0.5rem 0;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #04c5ad;
+  transition: all 0.2s;
+}
+
+.project-link:hover {
+  color: #ffd700;
+}
+
+.project-link svg {
+  width: 16px;
+  height: 16px;
+}
