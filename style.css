@@ -683,3 +683,16 @@ body.light-mode .progress {
     margin-right: 6px;
   }
 }
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.logo i {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover i {
+  transform: rotate(15deg);
+}
