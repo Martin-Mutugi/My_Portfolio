@@ -696,3 +696,29 @@ body.light-mode .progress {
 .logo:hover i {
   transform: rotate(15deg);
 }
+/* Navigation Bar Font Adjustments */
+.nav-links li a {
+  font-size: 0.9rem;  /* Reduced from default */
+  font-weight: 600;   /* Semi-bold for clarity */
+  padding: 0.5rem 0.8rem; /* Tighter padding */
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .nav-links li a {
+    font-size: 0.8rem;  /* Even smaller on mobile */
+    padding: 0.4rem 0.6rem;
+  }
+}
+.nav-icon {
+  width: 16px;  /* Reduced from 20px */
+  margin-right: 6px; /* Less spacing */
+}
+.navbar {
+  padding: 0.8rem 1.5rem; /* Reduce navbar padding */
+}
+
+.nav-links {
+  gap: 1rem; /* Reduce gap between items */
+}
