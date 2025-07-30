@@ -631,14 +631,14 @@ contactForm.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      formStatus.textContent = "✅ Message sent successfully!";
+      formStatus.textContent = " Message sent successfully!";
       formStatus.style.color = "#4CAF50";
       contactForm.reset();
     } else {
       throw new Error('Form submission failed');
     }
   } catch (error) {
-    formStatus.textContent = "❌ Error sending message. Please try direct email.";
+    formStatus.textContent = " Error sending message. Please try direct email.";
     formStatus.style.color = "#F44336";
     console.error('Form error:', error);
   } finally {
