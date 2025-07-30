@@ -441,32 +441,48 @@
     <div id="project-container" class="grid"></div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="card-section contact" data-aos="fade-up">
-    <h2>Let’s Connect</h2>
-    <form action="https://formsubmit.co/mutugimartin967@gmail.com" method="POST" autocomplete="on">
-      <!-- Prevent bot spam -->
-      <input type="hidden" name="_captcha" value="false">
-      <!-- Redirect after submit (optional) -->
-      <input type="hidden" name="_next" value="https://your-portfolio-site.com/thank-you.html">
+ <!-- Contact Section -->
+<section id="contact" class="card-section contact" data-aos="fade-up">
+  <h2>Let's Connect</h2>
+  
+  <!-- Updated Form with AJAX Support -->
+  <form id="contact-form" action="https://formsubmit.co/ajax/mutugimartin967@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_subject" value="New Portfolio Message">
+    <input type="hidden" name="_next" value="https://martinmutugiportfolio.netlify.app/#contact">
 
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <label for="name">Name <span class="required">*</span></label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
+    <label for="email">Email <span class="required">*</span></label>
+    <input type="email" id="email" name="email" placeholder="your@email.com" required>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+    <label for="message">Message <span class="required">*</span></label>
+    <textarea id="message" name="message" rows="5" placeholder="Hello Martin, I'd like to discuss..." required></textarea>
 
-      <button type="submit">Send Message</button>
-    </form>
+    <button type="submit">
+      <span id="submit-text">Send Message</span>
+      <div id="spinner" class="spinner"></div>
+    </button>
+    
+    <div id="form-status" class="form-status"></div>
+  </form>
 
-    <div class="social-icons">
-      <a href="https://github.com/Martin-Mutugi" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/martin-mutugi-a210b1373/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </section>
+  <!-- Fallback & Social Links -->
+  <p class="email-fallback">
+    Prefer direct email? <a href="mailto:mutugimartin967@gmail.com">mutugimartin967@gmail.com</a>
+  </p>
+
+  <div class="social-icons">
+    <a href="https://github.com/Martin-Mutugi" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/martin-mutugi-a210b1373/" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </div>
+</section>
 
   <footer class="card-section">
     <p>© 2025 Martin Mutugi — Built with 💡 for global excellence</p>
@@ -490,7 +506,7 @@ const projects = [
   {
     title: "Real-Time Chat App",
     description: "Secure messaging platform built with Node.js and Socket.io supporting 10,000+ concurrent users.",
-    screenshot: "assets/chat-app.jpg",
+    screenshot: "assets/chat-app.jpg, ",
     metrics: [
       "⚡ 30% lower latency with WebSocket optimizations",
       "🔒 End-to-end encryption",
@@ -581,6 +597,54 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('#languages').forEach(section => {
   observer.observe(section);
+});
+// Add this inside your <script> tag
+// Contact Form Handling
+const contactForm = document.getElementById('contact-form');
+const submitText = document.getElementById('submit-text');
+const spinner = document.getElementById('spinner');
+const formStatus = document.getElementById('form-status');
+
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  // Show loading state
+  submitText.textContent = "Sending...";
+  spinner.style.display = 'block';
+  formStatus.textContent = '';
+  
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json' 
+      },
+      body: JSON.stringify({
+        name: contactForm.name.value,
+        email: contactForm.email.value,
+        message: contactForm.message.value,
+        _captcha: "false",
+        _template: "box",
+        _subject: "New Portfolio Message"
+      })
+    });
+
+    if (response.ok) {
+      formStatus.textContent = "✅ Message sent successfully!";
+      formStatus.style.color = "#4CAF50";
+      contactForm.reset();
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch (error) {
+    formStatus.textContent = "❌ Error sending message. Please try direct email.";
+    formStatus.style.color = "#F44336";
+    console.error('Form error:', error);
+  } finally {
+    submitText.textContent = "Send Message";
+    spinner.style.display = 'none';
+  }
 });
   </script>
 </body>
