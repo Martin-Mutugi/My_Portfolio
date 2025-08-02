@@ -52,28 +52,5 @@ My_Portfolio/
   :root { --primary: #1a73e8; }
   body.dark-mode { --background: #181a1b; }
 </style>
-```
 
-### Action Items  
-- [ ] Replace `YOUR_BADGE_ID` in Netlify status badge  
-- [ ] Add real screenshots (drag & drop into [Imgur](https://imgur.com/))  
-- [ ] Verify all links in the live demo  
-
-No JavaScript mentioned** – only HTML/CSS as requested!  
-```
-
- Changes Made:
-1. Removed JavaScript references  
-   - Replaced "Interactive Projects" with generic "Responsive Design"  
-   - Deleted backend/FornSubmit mentions (implied by HTML form)  
-
-2. Pure CSS Proof 
-   - Added code snippets showing CSS-only theme toggle  
-   - Highlighted CSS variables in features  
-
-3. Simplified Tech Stack 
-   - Removed JavaScript from the table (implied by vanilla HTML)  
-
-4. Clear Folder Structure  
-   - Emphasized absence of JS frameworks  
 
