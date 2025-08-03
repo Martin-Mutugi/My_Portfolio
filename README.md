@@ -1,6 +1,6 @@
 ```markdown
 # Martin Mutugi - Portfolio  
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_BADGE_ID/deploy-status)](https://martinmutugiportfolio.netlify.app/)  
+https://martinmutugi254portfolio.netlify.app/ 
 
 ## Features  
 - Dark/Light Mode: CSS-powered theme switching (no JavaScript)  
@@ -14,10 +14,6 @@
 | Styling    | CSS3 (Variables, Grid, Flexbox) |  
 | Hosting    | Netlify |  
 
-## Preview  
-| Dark Mode | Light Mode |  
-|-----------|------------|  
-| ![Dark](https://i.imgur.com/YOUR_DARK_SS.png) | ![Light](https://i.imgur.com/YOUR_LIGHT_SS.png) |  
 
 ## Project Structure  
 ```
